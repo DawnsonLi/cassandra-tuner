@@ -1,0 +1,32 @@
+Connected to cluster: Test Cluster, max pending requests per connection 128, max connections per host 8
+Datatacenter: datacenter1; Host: localhost/127.0.0.1; Rack: rack1
+Created keyspaces. Sleeping 1s for propagation.
+Sleeping 2s...
+Warming up WRITE with 2500 iterations...
+Running WRITE with 200 threads for 10000 iteration
+type       total ops,    op/s,    pk/s,   row/s,    mean,     med,     .95,     .99,    .999,     max,   time,   stderr, errors,  gc: #,  max ms,  sum ms,  sdv ms,      mb
+total,          3566,    3566,    3566,    3566,    66.7,    45.7,   227.2,   297.8,   327.9,   479.3,    1.0,  0.00000,      0,      0,       0,       0,       0,       0
+total,          8587,    4605,    4605,    4605,    43.4,    33.5,   132.0,   188.1,   224.0,   259.8,    2.1,  0.08995,      0,      1,      99,      99,       0,     256
+total,         10000,    7136,    7136,    7136,    30.0,    25.7,    79.2,    88.7,   111.6,   126.5,    2.3,  0.16964,      0,      0,       0,       0,       0,       0
+
+
+Results:
+op rate                   : 4370 [WRITE:4370]
+partition rate            : 4370 [WRITE:4370]
+row rate                  : 4370 [WRITE:4370]
+latency mean              : 49.8 [WRITE:49.8]
+latency median            : 36.9 [WRITE:36.9]
+latency 95th percentile   : 159.3 [WRITE:159.3]
+latency 99th percentile   : 274.1 [WRITE:274.1]
+latency 99.9th percentile : 312.8 [WRITE:312.8]
+latency max               : 479.3 [WRITE:479.3]
+Total partitions          : 10000 [WRITE:10000]
+Total errors              : 0 [WRITE:0]
+total gc count            : 1
+total gc mb               : 256
+total gc time (s)         : 0
+avg gc time(ms)           : 99
+stdev gc time(ms)         : 0
+Total operation time      : 00:00:02
+
+END

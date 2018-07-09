@@ -1,0 +1,21 @@
+{
+	"sample_standard_list":
+	[
+		{
+			"parameter":"concurrent_reads",
+			"low-bound":32,
+			"high-bound":48,
+			"interval":8,
+			"type":"int"
+					},
+		{
+			"parameter":"concurrent_writes",
+			"low-bound":32,
+			"high-bound":80,
+			"interval":8,
+			"type":"int"
+					}
+	]
+
+
+}
