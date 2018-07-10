@@ -142,42 +142,7 @@ def generate_test(file_name, conf):
 参数名称：config_json:配置参数,T为温度，cool为降低温度的比例(幅度)
 '''
 import  math
-'''
-def random_opt(config_json, file_name, sample_num):
-    s = sample(config_json)
-    vec = s.sampleconf()  # 取一组配置参数
-    conflen = s.getnum_of_conf()  # 获取配置参数的总数
-    counter = 1
-    parameters_lst = []
-    time_lst = []
-    print "testing parameters:", vec, " ******************************"
-    ea = generate_test(file_name, vec)
-    parameters_lst.append(vec)
-    time_lst.append(ea)
-    while counter < sample_num:
-        counter += 1
-        i = random.randint(0, conflen - 1)  # 随机选择一个参数进行值的修改
-        step = s.getstep(i)  # 获取选定参数的步长
-        dis = random.randint(-1, 1) * step  # 移动的距离
-        vecb = vec  # 用于修改某个参数
-        vecb[i] += dis  # 将指定位置的参数进行修改
-        if vecb[i] < s.get_low_bound(i):
-            vecb[i] = s.get_low_bound(i)
-            # print i,':out of index of low'
-        elif vecb[i] > s.get_high_bound(i):
-            vecb[i] = s.get_high_bound(i)
-            # print i, ':out of index of high'
 
-        print "testing parameters:", vecb, " ******************************"
-        eb = generate_test(file_name, vecb)
-        parameters_lst.append((vecb))
-        time_lst.append(eb)
-    print time_lst
-    print parameters_lst
-    min_pos = time_lst.index(min(time_lst))
-    return parameters_lst[min_pos]
-
-'''
 
 def optimizer(config_json, T, cool, file_name, iter_num):
   
@@ -235,4 +200,3 @@ def optimizer(config_json, T, cool, file_name, iter_num):
 
 filename = '/usr/local/cassandra/conf/cassandra.yaml'
 conf = optimizer('./config.json', 100000.0, 0.95, filename, 3)
-#generate_test(filename, conf)
